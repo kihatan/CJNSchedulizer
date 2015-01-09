@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Possible Schedules</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small_green.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/bootstrap.js"></script>
+
+</head>
+<body class="squish2" background="../static/assets/images/bg.png">
+	<h1 align="center">Thank you for Registering!</h1>
+	<h4 align="center">Please either write this down or go back to the page and reload to see your schedule.</h4>
+	<br><br>
+<div class="panel panel-success" width = "100%">
+   <div class="panel-heading">
+      <h3>Remember, your schedule is</h3>
+   </div>
+	<div class="panel-body" width="100%">
+	<table width="100%">
+		<thead>
+		<tr>
+			<th>{{"{0:50s}".format("Name")}}</th>
+			<th></th>
+	 		
+	 		<th>{{"{0:40s}".format("Time")}}</th>
+	 		<th></th>
+	 
+	 		<th>{{"{0:50s}".format("Location")}}</th>
+		</tr>
+		</thead>    
+		<tbody>
+	{% for i in data %}
+		<tr>
+			<td><h4>{{i.name}}</h4><td>
+	
+			<td><h4>{{hourconvert( i.start )}} - {{hourconvert(i.finish)}}</h4><td>
+	
+			<td><h4>{{i.location}}</h4><td>
+		</tr>
+	 {% endfor %}
+	 </tbody>
+	</table>
+	</div>
+</div>
+<br>
+<form action="/">
+	<div align="center">
+	<button type="submit" align="center" class="btn btn-success btn-lg" style="width:300px;font-size:large">Go Back</button>
+	</div>
+</form>	 
+
+</body>
+</html>

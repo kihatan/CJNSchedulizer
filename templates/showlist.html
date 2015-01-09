@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Con Ja Nai Sign-up</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+</head>
+
+<br><br><br>
+<form action="/submitchoices" onsubmit="location.reload()" method="post">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="panel panel-primary" width="70%%">
+				<div class="panel-heading" width="100%">
+					<h2 align="center">Please sign up for 2 or 3 available shifts</h2>
+					<h4 align="center">If the box is unselectable, the shifts are filled!</h4>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-2">
+			<div class="panel panel-primary" width="20%">
+				<div class="panel-heading">
+					<h2> Show Shifts </h2>	
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="checkbuff">
+
+							<table align="center" style="width:95%" border="1">
+								{% for i in events %}
+								{% if i.type == 'Show' %}
+								<tr>
+									{% if i.person2 == 'none' %}
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}"></td>						
+ 									{% else %}	
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}" disabled></td>		
+ 									{% endif %}
+									<td align="center">{{ i.name }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="panel panel-primary" width="20%">
+				<div class="panel-heading">
+					<h2> Movie Shifts </h2>	
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="checkbuff">
+
+							<table align="center" style="width:95%" border="1">
+								{% for i in events %}
+								{% if i.type == 'Movie' %}
+								<tr>
+									{% if i.person2 == 'none' %}
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}"></td>						
+ 									{% else %}	
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}" disabled></td>		
+ 									{% endif %}
+									<td align="center">{{ i.name }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<div class="panel panel-primary" width="20%">
+				<div class="panel-heading">
+					<h2> Event Shifts </h2>	
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="checkbuff">
+
+							<table align="center" style="width:95%" border="1">
+								{% for i in events %}
+								{% if i.type == 'Event' %}
+								<tr>
+									{% if i.person2 == 'none' %}
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}"></td>						
+ 									{% else %}	
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}" disabled></td>		
+ 									{% endif %}
+									<td align="center">{{ i.name }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="panel panel-primary" width="20%">
+				<div class="panel-heading">
+					<h2> Panel Shifts </h2>	
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="checkbuff">
+
+							<table align="center" style="width:95%" border="1">
+								{% for i in events %}
+								{% if i.type == 'Panel' %}
+								<tr>
+									{% if i.person2 == 'none' %}
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}"></td>						
+ 									{% else %}	
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}" disabled></td>		
+ 									{% endif %}
+									<td align="center">{{ i.name }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="panel panel-primary" width="20%">
+				<div class="panel-heading">
+					<h2> Table Shifts </h2>	
+				</div>
+				<div class="panel-body">
+					<div class="row">
+
+						<div class="checkbuff">
+
+							<table align="center" style="width:95%" border="1">
+								{% for i in events %}
+								{% if i.type == 'Table' %}
+								<tr>
+									{% if i.person2 == 'none' %}
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}"></td>						
+ 									{% else %}	
+ 										<td align="center"><input type="checkbox" name='picks' value="{{ i.id - 1}}" disabled></td>		
+ 									{% endif %}
+									<td align="center">{{ i.name }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<h4 align="center">Enter Name Here:</h4>
+	<div style="text-align:center">  
+		<input type="text" name="name" style="width:300px;font-size:large;text-align:center" /> 
+	</div> 
+	<br><br>
+
+	<div style="text-align:center">  
+		<button type="submit" class="btn btn-primary btn-lg" style="width:300px;font-size:large">Submit Choices</button>  
+	</div> 
+
+</form>
+
+<br><br><br>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

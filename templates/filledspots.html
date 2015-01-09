@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Con Ja Nai Sign-up</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+</head>
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+		<div class="panel panel-primary" width="90%">
+				<div class="panel-heading" width="100%">
+					<h3>Spots That Have Already Been Taken</h3>
+				</div>
+				<div class="panel-body" width="100%">
+
+					<table align="center" style="width:95%" border="1" class="tcenter">
+						{% for j in num %}
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td align="center"><b>{{ i.name }}</b></td>
+								{% endfor %}
+							</tr>
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td align="center">{{ checkspot(i.person1) }}</td>
+								{% endfor %}
+							</tr>
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td align="center">{{ checkspot(i.person2) }}</td>
+								{% endfor %}
+							</tr>
+							
+							{% endfor %}
+						<!-- <tr>
+							{% for i in events[:10] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[:10] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[:10] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+
+						<tr>
+							{% for i in events[10:20] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[10:20] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[10:20] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+
+						<tr><b>
+							{% for i in events[20:30] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</b></tr>
+						<tr>
+							{% for i in events[20:30] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[20:30] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+
+						<tr>
+							{% for i in events[30:40] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[30:40] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[30:40] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+
+						<tr>
+							{% for i in events[40:50] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[40:50] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[40:50] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+						<tr>
+							{% for i in events[50:60] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[50:60] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+						</tr>
+						<tr>
+							{% for i in events[50:60] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+						</tr>
+
+
+
+						<tr>
+							{% for i in events[60:67] %}
+							<td align="center"><b>{{ i.name }}</b></td>
+							{% endfor %}
+							<td></td><td></td><td></td>
+						</tr>
+						<tr>
+							{% for i in events[60:67] %}
+							<td align="center">{{ checkspot(i.person1) }}</td>
+							{% endfor %}
+							<td></td><td></td><td></td>
+						</tr>
+						<tr>
+							{% for i in events[60:67] %}
+							<td align="center">{{ checkspot(i.person2) }}</td>
+							{% endfor %}
+							<td></td><td></td><td></td>
+						</tr> -->
+
+					</table>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+
+		<br>
+
+	</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

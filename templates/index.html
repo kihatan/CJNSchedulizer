@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Con Ja Nai Sign-up</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/bootstrap.js"></script>
+	
+
+</head>
+<body background="../static/assets/images/bg.png">
+	<br>
+	<div align="center"><img src="../static/assets/images/header_three_fifths.png"></div>
+
+	<br>
+		<h4 align="center">To view a block schedule, click <a href='../static/assets/documents/schedule.pdf' target="_blank">here</a></h4>
+	<br>
+
+	{% include 'filledspots.html' %}
+	<br>
+
+	<br><br>
+
+	
+	<ul align='center' class="nav nav-tabs" style="outline:1" align="center">
+		<li class="active"><a href="#pick">Find Your Schedules</a></li>
+		<li><a href="#list">Commit to Spots</a></li>
+	</ul>
+	
+	</div>
+
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="pick">{% include 'pick.html' %}</div>
+		<div class="tab-pane fade" id= "list">{% include 'showlist.html' %}</div>
+	</div>
+
+	<form action="/log"><input class="specialbutton" type="submit" value="Fix Table"/></form>
+
+	<script type="text/javascript"> 
+		$('.nav-tabs a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		}) 
+	</script>
+
+</body>
+</html>

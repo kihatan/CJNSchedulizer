@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Possible Schedules</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/bootstrap.js"></script>
+
+</head>
+<body class="squish" background="../static/assets/images/bg.png">
+	<br>
+	<div align="center"><img src="../static/assets/images/header_three_fifths.png"></div>
+
+	<br>
+		<h4 align="center">Below is a list of your possible schedules.</h4>
+	<br><br>
+
+
+   {% for schedule in schedules %}
+      <div class="panel panel-primary" width = "100%">
+         <div class="panel-heading">
+            <h3>Schedule {{ loop.index }}:</h3>
+            <hr />
+         </div>
+         <div class="panel-body">
+         <table class="schedule" border="0">
+	       <thead>
+	          <tr>
+	           <th>{{"{0:40s}".format("Name")}}</th>
+		       <th></th>
+		       <th>{{"{0:40s}".format("Time")}}</th>
+		       <th></th>
+		       <th>{{"{0:40s}".format("Location")}}</th>
+	           </tr>
+           </thead>
+	       <tbody>
+	       {% for show in schedule %}
+	           <tr>
+		       <td>{{ show.name }}</td>
+		       <td></td>
+		       <td>{{ hourconvert( show.start ) }} - {{ hourconvert( show.finish ) }}</td>
+		       <td></td>
+		       <td>{{ show.location }}</td>
+	           </tr>
+	       {% endfor %}
+           </tbody>
+         </table>
+         </div>
+         <br>
+       </div>
+		 <br><br><br><br>
+	 {% endfor %}
+	 <br><br><br>
+
+</body>
+</html>
+
+
+
+

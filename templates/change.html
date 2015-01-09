@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fix the Database</title>
+
+	<link rel="shortcut icon" href="../static/assets/images/animania_icon_small.ico">
+
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css.css">
+
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/bootstrap.js"></script>
+	
+
+</head>
+<body background="../static/assets/images/bg.png">
+	<br>
+	<form action="/fixtable" method="post">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="panel panel-danger" width="100%">
+					<div class="panel-heading" width="100%">
+						<h2 align="center">ANY CHANGES MADE ON THIS PAGE ARE PERMENANT, PROCEED WITH CAUTION</h2>
+						<h5 align="center">To empty a spot, simply put one space there</h5>
+					</div>
+					<div class="panel-body" width="100%">
+						<table align="center" style="width:95%" border="1" class="tcenter">
+
+
+							{% for j in num %}
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td align="center"><b>{{ i.name }}</b></td>
+								{% endfor %}
+							</tr>
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td> <input class="resizedTextbox" type="text" name="first" style="color:#888;" value="{{ checkspot(i.person1) }}" onfocus="inputFocus(this)" onblur="inputBlur(this)" /></td>
+								{% endfor %}
+							</tr>
+							<tr>
+								{% for i in events[(j*10)-10:(j*10)] %}
+								<td> <input class="resizedTextbox" type="text" name="second" style="color:#888;" value="{{ checkspot(i.person2) }}" onfocus="inputFocus(this)" onblur="inputBlur(this)" /></td>
+								{% endfor %}
+							</tr>
+
+							{% endfor %}
+
+
+						</table>
+
+
+
+
+						<h4 align="center">Make Sure You Want to Commit to All These Changes Before Submitting</h4>
+
+
+						<div style="text-align:center">  
+							<button type="submit" class="btn btn-danger btn-lg" style="width:300px;font-size:large">SUBMIT CHANGES</button>  
+						</div>
+
+
+					</form>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<form action='/cleartable', method='post'>
+		<h4 align="center">ONLY CLICK THIS BUTTON IF YOU WANT TO CLEAR ALL THE PERSON DATA FROM THIS TABLE</h4>
+		<div style="text-align:center">  
+			<button type="submit" class="btn btn-danger btn-lg" style="width:300px;font-size:large">SUBMIT</button>  
+		</div>
+	</form>
+	<br>
+
+
+
+	<script type="text/javascript">
+		function inputFocus(i){
+			if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+		}
+		function inputBlur(i){
+			if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+		}
+	</script>
+</body>
+</html>

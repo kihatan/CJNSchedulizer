@@ -1,0 +1,112 @@
+.specialbutton{
+
+	background: inherit;
+	border: none;
+	font-size: 8px;
+}
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:100%;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.resizedTextbox {
+	width: 140px
+}
+
+iframe {
+    margin: 0 auto;
+    background-color: #777;
+    display: block;
+}
+
+.fit{
+
+	max-width: 95%;
+	width: 95%;
+
+}
+
+.checkbuff > input[type=checkbox] {
+
+	margin: 80px;
+
+}
+
+
+/* Taken from http://stackoverflow.com/questions/9421966/how-do-i-center-the-twitter-bootstrap-tabs-on-the-page */
+.nav-tabs > li{
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs{
+    text-align:center;
+}
+
+.schedule tbody tr, .schedule thead tr{
+
+	border-bottom-style: solid;
+	border-color: black;
+	border-width: 1px;
+
+}
+.schedule {
+
+	width: 100%;
+}
+
+.squish h1{
+
+	font-size: 45pt;
+}
+
+.schedule tbody td, .schedule thead th {
+
+	padding: 15px;
+	font-size: 20px;
+
+}
+
+.squish{
+	width: 50%;
+	margin: auto;
+}
+
+.squish2{
+
+	width: 40%;
+	margin: auto;
+
+}
+
+.squish2 h1{
+	margin-top: 40%;
+}
+
+.tcenter{
+
+	table-layout: fixed;
+}
+
+.tcenter td{
+
+	padding: 3px;
+}
+
+table td{
+
+	font-size: 15px;
+}
