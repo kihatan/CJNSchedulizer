@@ -155,6 +155,14 @@ def fix():
 		j += 1 
 
 	options['num']=m
+	
+	for i in person1:
+		if person1 == ' ' or '':
+			person1 = 'none'
+
+	for i in person2:
+		if person2 == ' ' or '':
+			person2 = 'none'
 
 	j = 0
 	for i in person1:
@@ -180,12 +188,25 @@ def fix():
 		if i.person1 == 'none' and i.person2 != 'none':
 			i.person1 = i.person2
 			i.person2 = 'none'
-		if i.person1 == '' and i.person2 != 'none':
-			i.person1 = i.person2
-			i.person2 = 'none'
 		if i.person1 == ' ' and i.person2 != 'none':
 			i.person1 = i.person2
 			i.person2 = 'none'
+
+	j = 0
+	for i in person1:
+		if shows[j].person1 == ' ':
+			shows[j].person1 = 'none'
+		if shows[j].person1 == '':
+			shows[j].person1 = 'none'
+		j += 1
+	
+	j = 0
+	for i in person2:
+		if shows[j].person2 == ' ':
+			shows[j].person2 = 'none'
+		if shows[j].person2 == '':
+			shows[j].person2 = 'none'
+		j += 1
 
 	session.commit()
 
@@ -250,7 +271,7 @@ def subchoice():
 
 	for i in data:
 
-		if shows[i].person2 == shows[i].person1 and shows[i].person1 != 'none':
+		if shows[i].person1 != 'none' and username == shows[i].person1:
 			error = str('You Cannot Sign Up Twice for the Same Shift, Please Adjust Your Choices')
 			options['error'] = error
 			return render_template('error.html', **options)
